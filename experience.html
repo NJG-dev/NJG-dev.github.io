@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience | Noah Garcia</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: #f7f8fa;
+    color: #171717;
+    line-height: 1.6;
+  }
+
+  /* NAVIGATION */
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 8%;
+
+    background: rgba(17, 17, 17, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .logo {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links li {
+    display: flex;
+    align-items: center;
+  }
+
+  /* DIVIDERS */
+
+  .nav-links li:not(:last-child)::after {
+    content: "";
+    width: 1px;
+    height: 18px;
+    background: #555;
+    margin-left: 24px;
+  }
+
+  .nav-links a {
+    color: #cfcfcf;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    color: white;
+  }
+
+  /* ACTIVE PAGE */
+
+  .nav-links a.active {
+    color: #111;
+    background: white;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  /* LINKEDIN */
+
+  .linkedin {
+    border: 1px solid #555;
+    padding: 8px 13px;
+    border-radius: 8px;
+    color: white !important;
+    white-space: nowrap;
+  }
+
+  .linkedin:hover {
+    background: white;
+    color: #111 !important;
+    border-color: white;
+  }
+
+  /* PAGE */
+
+  main {
+    max-width: 1050px;
+    margin: auto;
+    padding: 80px 8%;
+  }
+
+  .page-title {
+    font-size: 52px;
+    margin-bottom: 10px;
+  }
+
+  .intro {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 50px;
+    max-width: 800px;
+  }
+
+  /* EXPERIENCE CARDS */
+
+  .experience-card {
+    background: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 25px;
+
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .experience-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .experience-card h2 {
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+
+  .role {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .date {
+    color: #777;
+    margin-bottom: 18px;
+  }
+
+  .experience-card p {
+    color: #555;
+    line-height: 1.7;
+  }
+
+  /* FOOTER */
+
+  footer {
+    text-align: center;
+    padding: 35px;
+    color: #777;
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 800px) {
+
+    body {
+      overflow-x: hidden;
+    }
+
+    nav {
+      padding: 14px 5%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .logo {
+      font-size: 20px;
+    }
+
+    .nav-links {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+
+      column-gap: 12px;
+      row-gap: 14px;
+    }
+
+    /* Smaller dividers on mobile */
+
+    .nav-links li:not(:last-child)::after {
+      height: 14px;
+      margin-left: 8px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+    }
+
+    .nav-links a.active {
+      padding: 6px 10px;
+    }
+
+    .linkedin {
+      padding: 6px 10px;
+    }
+
+    main {
+      padding: 50px 5%;
+    }
+
+    .page-title {
+      font-size: 38px;
+      line-height: 1.05;
+    }
+
+    .intro {
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .experience-card {
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .experience-card h2 {
+      font-size: 22px;
+    }
+
+    .experience-card p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  }
+  /* PAGE TRANSITION */
+
+body {
+  animation: pageFadeIn 0.7s ease;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+  <a class="logo" href="index.html">
+    Noah Garcia
+  </a>
+
+  <ul class="nav-links">
+
+    <li>
+      <a href="about.html">About</a>
+    </li>
+
+      <li>
+  <a href="experience.html" class="active">Experience</a>
+    </li>
+
+    <li>
+      <a href="leadership.html">Leadership</a>
+    </li>
+
+    <li>
+      <a href="education.html">Education</a>
+    </li>
+
+    <li>
+      <a
+        class="linkedin"
+        href="https://www.linkedin.com/in/noahgarcia07/"
+        target="_blank">
+        LinkedIn ↗
+      </a>
+    </li>
+
+  </ul>
+
+</nav>
+
+
+<main>
+
+  <h1 class="page-title">Experience</h1>
+
+  <p class="intro">
+    Professional experience focused on leadership,
+    communication, teamwork, and responsibility.
+  </p>
+
+
+  <div class="experience-card">
+
+    <h2>Tri-Valley Water Polo Club</h2>
+
+    <div class="role">
+      Assistant Coach — Three Youth Teams
+    </div>
+
+    <div class="date">
+      June 2026 – July 2026 | Livermore, California
+    </div>
+
+    <p>
+      Coached three youth water polo teams consisting of more than
+      40 athletes ages 14–18. Led drills and in-water coaching while
+      developing teamwork, communication, and athletic skills.
+    </p>
+
+  </div>
+
+
+  <div class="experience-card">
+
+    <h2>Livermore Area Parks and Recreation</h2>
+
+    <div class="role">
+      Lifeguard I — StarGuard Certified
+    </div>
+
+    <div class="date">
+      June 2022 – Present | Livermore, California
+    </div>
+
+    <p>
+      Monitor aquatic facilities and enforce safety procedures to
+      maintain a safe recreational environment for patrons.
+    </p>
+
+  </div>
+
+
+  <div class="experience-card">
+
+    <h2>Livermore Area Parks and Recreation</h2>
+
+    <div class="role">
+      Park & Trail Restoration Volunteer
+    </div>
+
+    <p>
+      Participate in volunteer projects supporting local park and
+      trail restoration and management.
+    </p>
+
+  </div>
+
+</main>
+
+
+<footer>
+  © 2026 Noah Garcia
+</footer>
+
+</body>
+</html>
